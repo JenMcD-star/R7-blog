@@ -4,6 +4,6 @@
 
 <% @pages.each do |page| %>
   <p>
-    <%= page.title %>
+    <%= link_to page.title, page %>
   </p>
 <% end %>
