@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+    # before show, edit, update and destroy before_action method will be called to set the post instance variable
+
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json

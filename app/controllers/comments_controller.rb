@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
-    # before create and edit actions this before_action method will be called 
-    # and the post instance variable will be set
+    # before create and edit actions before_action method will be called to set the post instance variable
     before_action :set_post
     before_action :set_comment, only: %i[ edit update destroy ]
     
+
+      # No `new` action because form is provided by PostsController#show
     def create
        @comment = @post.comments.create(comment_params)
+      # We want to show the comment in the context of the Post
        redirect_to @post
     end
 
