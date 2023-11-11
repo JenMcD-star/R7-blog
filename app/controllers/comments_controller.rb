@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       # No `new` action because form is provided by PostsController#show
     def create
        @comment = @post.comments.create(comment_params)
-      # We want to show the comment in the context of the Post
+    # We want to show the comment in the context of the Post
        redirect_to @post
     end
 
@@ -24,11 +24,12 @@ class CommentsController < ApplicationController
         end
     end
 
-    def destroy
-        # @comment = Comment.find(params[:id])
-        @comment.destroy
-        redirect_to @post, notice: 'Comment deleted successfully'
-    end
+  def destroy
+   # @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to @post
+  end
+
 
     private
     def comment_params
