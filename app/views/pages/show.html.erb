@@ -4,6 +4,15 @@
  <%= @page.body %>
 </p>
 
+<div id="comments">
+  <h1>Comments</h1>
+  <%= render partial: "comments/comment", collection: @post.comment, as: :comment%>
+  <% end %>
+</div>
+
+
+
+
 <%= link_to 'Edit', edit_page_path(@page) %>
 
 
